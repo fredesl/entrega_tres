@@ -1,0 +1,45 @@
+{% extends 'app_tienda/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Tienda HeMan | Productos
+{% endblock%}
+
+{% block content %}
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Productos</div>
+    </div>
+</header>
+
+  
+    <!-- Formulario de búsqueda -->
+    <div class="d-flex flex-column align-items-center mb-2">
+      <form action="" method="GET">
+        <input type="text" name="q" placeholder="Buscar..." required>
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+
+<table class="table">
+    <thead>
+      <tr class="table-warning">
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+		    <th scope="col">Precio</th>
+		    <th scope="col">Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for producto in productos %}
+      <tr class="table-light">
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.descripcion}}</td>
+		<td>{{producto.precio}}</td>
+		<td>{{producto.cantidad}}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+{% endblock%}

@@ -1,0 +1,36 @@
+{% extends 'app_tienda/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Agregar Sucursal</div>
+    </div>
+</header>
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input name="nombre" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Dirección</label>
+                    <input name="direccion" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Provincia</label>
+                    <input name="provincia" type="text" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar Sucursal</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock%}

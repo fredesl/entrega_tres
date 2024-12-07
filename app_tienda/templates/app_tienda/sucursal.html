@@ -1,0 +1,40 @@
+{% extends 'app_tienda/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Tienda HeMan | Sucursales
+{% endblock%}
+
+{% block content %}
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Sucursales</div>
+    </div>
+</header>
+<div class="d-flex flex-column align-items-center mb-2">
+  <form action="" method="GET">
+    <input type="text" name="q" placeholder="Buscar..." required>
+    <button type="submit">Buscar</button>
+  </form>
+</div>
+
+<table class="table">
+    <thead>
+      <tr class="table-warning">
+        <th scope="col">Nombre</th>
+        <th scope="col">Dirección</th>
+		<th scope="col">Provincia</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for sucursal in sucursales %}
+      <tr class="table-light">
+        <td>{{sucursal.nombre}}</td>
+        <td>{{sucursal.direccion}}</td>
+		<td>{{sucursal.provincia}}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+{% endblock%}

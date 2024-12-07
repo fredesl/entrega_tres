@@ -1,0 +1,18 @@
+{% extends 'app_tienda/base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Tienda HeMan | Inicio
+{% endblock%}
+
+{% block content %}
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Bienvenido a Tienda HeMan</div>
+        <div class="masthead-heading text-uppercase">Renovamos tu estilo!</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'ver-mas' %}">Sobre Nosotros</a>
+    </div>
+</header>
+{% endblock %}
